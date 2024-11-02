@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --color: rgb(204, 48, 48);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id ="demo" style="width: 500px; height: 500px; margin: auto; margin-bottom: 100px; background-color: var(--color);"></div>
+    <button type="button" onclick="change()">Change color</button>
+    <script>
+        var r = document.querySelector(":root");
+        function change(){
+            let red= getRndInteger(0,255);
+            let green = getRndInteger(0,255);
+            let blue = getRndInteger(0,255);
+            let text = "rgb" + "(" + red +"," + green + "," + blue +")";
+            r.style.setProperty('--color', text);
+        }
+        function getRndInteger(min, max) {
+             return Math.floor(Math.random() * (max - min + 1) ) + min;
+        }
+    </script>
+</body>
+
+</html>

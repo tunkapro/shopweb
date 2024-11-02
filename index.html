@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0px;
+            margin: 0;
+            background-color: #000;
+            background-image: url(/images/backgrounds/food.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
+            margin: 0;
+            color: #ffffff;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .container{
+            display: grid;
+            grid-template-areas: 
+            'header header header'
+            'main main aside'
+            'footer footer footer';
+        }
+        /*header */
+        .head-container{
+            grid-area: header;
+            display: grid;
+            grid-template-areas: 'nav';
+        }
+        .head-container .nav-bar{
+            grid-area: nav;
+            width: 100%;
+            background-color: #000;
+            position: fixed;
+            z-index: 1;
+        }
+        .head-container .nav-bar ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border-bottom: 1px solid #ffffff;
+        }
+        .head-container .nav-bar li{
+            float: left;
+        }
+        .head-container .nav-bar li h1{
+            font-size: 20px;
+            padding: 10px 30px;
+        }
+        .head-container .nav-bar li a{
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 30px 40px;
+        }
+        .head-container .nav-bar li button{
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            background-color: #000;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 30px 40px;
+        }
+        .head-container .nav-bar li button:hover{
+            background-color: #8fdbc2;
+            border-radius: 10px;
+        }
+        .head-container .nav-bar li a:hover{
+            background-color: #8fdbc2;
+            border-radius: 10px;
+        }
+        .head-container .nav-bar li input{
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .head-container .nav-bar li input:focus{
+            border: 3px solid #8fdbc2;
+            outline: none;
+        }
+        /*main*/
+        .main-container{
+            grid-area: main;
+            position:relative;
+            top:84px;
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
+        /*Welcome*/
+        .main-container .welcome {
+            font-size: 30px;
+            text-align: center;
+            padding: 10px;
+        }
+        /*Image*/
+        .main-container .box{
+            display: flex;
+            flex-flow:  row wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-container .box div.card{
+            padding: 10px;
+            border: 1px solid white;
+            margin: 20px;
+        }
+        .main-container .box .card img{
+            width: 450px;
+            margin: 10px;
+            height: auto;
+        }
+        .aside-container{
+            grid-area: aside;
+            border: 1px solid rgb(253, 253, 253);
+            overflow: hidden;
+            position:relative;
+            top:84px;
+        }
+        .aside-container .box{
+            display: flex;
+            flex-flow: column wrap;
+        }
+        .aside-container .box .card{
+            padding: 10px;
+            margin: 0 20px;
+        }
+        .aside-container .box .card image{
+            height: auto;
+        }
+        .footer{
+            grid-area: footer;
+            border: 1px solid black;
+            position:relative;
+            position:relative;
+            top: 84px;;
+        }
+        /*RWD nav-bar*/
+        @media screen and (max-width:600px){
+            .head-container .nav-bar li a.a0{
+                display: none;
+            }
+            .head-container .nav-bar li a.a1{
+                display: none;
+            }
+                
+        }
+        @media screen and (max-width:750px){
+            .head-container .nav-bar li a.a2{
+                display: none;
+            }
+        }
+        @media screen and (max-width:1200px){
+            .head-container .nav-bar li input{
+                display: none;
+            }
+        }
+        @media  screen and (max-width: 900px) {
+            .container{
+            grid-template-areas: 
+            'header'
+            'main'
+            'aside'
+            'footer';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head-container">
+            <nav class="nav-bar">
+                <ul>
+                    <li><h1>My Website</h1></li>
+                    <li><a class="a0" href="#home">Home</a></li>
+                    <li><a class="a1" href="#products">Products</a></li>
+                    <li><a class="a2" href="#contact">Contact</a></li>
+                    <li><div class="dopdown">
+                        <button class="drpbtn" type="button">Menu</button>
+                    </div></li>
+                    <li style="float: right;"><a href="#">Login</a></li>
+                    <li><input type="search" placeholder="Search..."></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-container">
+            <div class="welcome"style="height: 100vh;">
+                <h1>Welcome To My Website</h1>
+                <h4>Do you want to buy some thing?</h4>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <img src="/images/foods/bantet.jpg" width="500" height="400">
+                    <p>Some text..</p>
+                </div>
+                <div class="card">
+                    <img src="/images/foods/bun.jpg" width="500" height="400">
+                    <p>Some text..</p>
+                </div>
+                <div class="card">
+                    <img src="/images/foods/bunthitnuong.jpg" width="500" height="400">
+                    <p>Some text..</p>
+                </div>
+                <div class="card">
+                    <img src="/images/foods/buncha.jpg" width="500" height="400">
+                    <p>Some text..</p>
+                </div>
+            </div>
+        </div>
+        <div class="aside-container"> 
+            <h1 style="text-align: center;">Popular post</h1>
+            <div class="box">
+                <div class="card">
+                    <img src="/images/foods/banhmi.jpg" width="200" height="200">
+                    <p>Some text..</p>
+                </div>
+                <div class="card">
+                    <img src="/images/foods/hutieu.jpg" width="200" height="200">
+                    <p>Some text..</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <h1>Footer</h1>
+        </div>
+    </div>
+</body>
+
+</html>

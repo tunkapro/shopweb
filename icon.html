@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/f13d2ea6ee.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #000000;
+        }
+
+        .cloud {
+            font-size: 200px;
+            color: #f5f1f1;
+            margin-top: 150px;
+            margin-left: 150px;
+            text-shadow: 5px 5px 6px #0a0808, 0px 0px 200px #1145d4, 0px 0px 50px #0093f5;
+        }
+
+        .snow0 {
+            color: #f5f1f1;
+            font-size: 40px;
+            margin-top: 50px;
+            margin-left: 200px;
+            text-shadow: 5px 5px 6px #0a0808, 0px 0px 200px #1145d4, 0px 0px 50px #0093f5;
+            animation-name: snow;
+            animation-duration: 4s;
+            position: absolute;
+        }
+        .snow1 {
+            color: #f5f1f1;
+            font-size: 40px;
+            margin-top: 50px;
+            margin-left: 260px;
+            text-shadow: 5px 5px 6px #0a0808, 0px 0px 200px #1145d4, 0px 0px 50px #0093f5;
+            animation-name: snow;
+            animation-duration: 4s;
+            position: absolute;
+        }
+        .container {
+            border: 1px solid white;
+            height: 50vh;
+            top: -150px;
+            z-index: -1;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <i id="cloud" class="fas fa-cloud cloud"></i>
+    <div class="container">
+        <i id="snow0" class="fas fa-snowflake snow0"></i>
+        <i id="snow1" class="fas fa-snowflake snow"></i>
+        <i id="snow2" class="fas fa-snowflake snow"></i>
+    </div>
+    <button type="button" onclick="move()"></button>
+    <script>
+        let inter = null;
+        inter = setInterval(move,5000);
+        function move() {
+            let count = 0;
+            if (count == 2) {
+                clearInterval()
+            } else {
+                let id = null;
+                const elem = document.getElementById("snow" + count)
+                let pos = 0;
+                clearInterval(id);
+                id = setInterval(frame, 10);
+                function frame() {
+                    if (pos == 350) {
+                        clearInterval(id);
+                        count++;
+                    } else {
+                        pos++;
+                        elem.style.top = pos + "px";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
